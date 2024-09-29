@@ -7,6 +7,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import AuthLayout from "./layouts/auth";
 import DefaultLayout from "./layouts/default";
 import HomePage from "./pages/home";
+import IuranPage from "./pages/iuran";
+import IuranFormPage from "./pages/iuran-form";
 import Login from "./pages/login";
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +37,9 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Route>
           <Route element={<DefaultLayout />}>
+            <Route path="/iuran/new" element={<IuranFormPage />} />
+            <Route path="/iuran/edit/:iuran_id" element={<IuranFormPage />} />
+            <Route path="/iuran" element={<IuranPage />} />
             <Route path="/" element={<HomePage />} />
           </Route>
         </Routes>

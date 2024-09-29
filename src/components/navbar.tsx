@@ -47,8 +47,7 @@ export const Navbar = () => {
             color="foreground"
             href="/"
           >
-            {/* <Logo /> */}
-            <p className="font-bold text-inherit">SIMRT</p>
+            <img src="/wargi_logo.png" alt="WARGI" className="h-8" />
           </Link>
         </NavbarBrand>
       </NavbarContent>
