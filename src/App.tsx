@@ -12,6 +12,7 @@ import IuranFormPage from "./pages/iuran-form";
 import Login from "./pages/login";
 
 import 'react-toastify/dist/ReactToastify.css';
+import IuranDetailPage from "./pages/iuran-detail";
 
 function App() {
   const store = createStore({
@@ -39,6 +40,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path="/iuran/new" element={<IuranFormPage />} />
             <Route path="/iuran/edit/:iuran_id" element={<IuranFormPage />} />
+            <Route path="/iuran/:iuran_id" element={<IuranDetailPage />} />
             <Route path="/iuran" element={<IuranPage />} />
             <Route path="/" element={<HomePage />} />
           </Route>

@@ -1,34 +1,25 @@
 import useGetAllIuran from "@/api/iuran/useGetAllIuran";
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
-import { Pagination, Skeleton, useDisclosure } from "@nextui-org/react";
-import { useState } from "react";
+import { Pagination, Skeleton } from "@nextui-org/react";
 import { HiOutlinePlus } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import IuranCard from "./components/iuran-card";
-import IuranDetailModal from "./components/payment-detail-modal";
-import { PaymentItem } from "./types";
+
 
 export default function PaymentPage() {
   const navigate = useNavigate();
 
-  const [selectedPayment, setSelectedPayment] = useState<PaymentItem | null>(null);
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { data, isFetching } = useGetAllIuran();
 
   const hasMultiplePage = (data?.meta?.pagination?.pageCount || 0) > 1;
 
-  const handleItemClick = (item: PaymentItem) => {
-    setSelectedPayment(item);
-    onOpen();
+  const handleItemClick = (id: number) => {
+    navigate(`/iuran/${id}`);
   }
 
   const handleAddNewClick = () => {
     navigate('/iuran/new');
-  }
-
-  const handleEditClick = () => {
-    navigate(`/iuran/edit/${selectedPayment?.id}`);
   }
 
   return (
@@ -56,7 +47,7 @@ export default function PaymentPage() {
               <IuranCard
                 key={iuran.id}
                 iuran={iuran}
-                onClick={() => handleItemClick(iuran)}
+                onClick={() => handleItemClick(iuran.id)}
               />
             ))}
           </div>
@@ -68,14 +59,6 @@ export default function PaymentPage() {
           </section>
         )}
       </div>
-
-      <IuranDetailModal
-        iuran={selectedPayment}
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onChange={onOpenChange}
-        onEditClick={handleEditClick}
-      />
     </>
   );
 }

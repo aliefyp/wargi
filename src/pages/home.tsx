@@ -28,7 +28,7 @@ export default function HomePage() {
       <section>
         <div className="flex justify-between items-center cursor-pointer group" onClick={handleResidenceClick}>
           <div>
-            <h1 className={`${title({ size: 'sm' })}`}>Santika Land</h1>
+            <h1 className={`${title({ size: 'sm', color: 'violet' })}`}>Santika Land</h1>
             <div className="flex items-center gap-1 ">
               <HiOutlineLocationMarker size={16} className="text-gray-600" />
               <p className="text-sm text-zinc-600 font-bold group-hover:underline">Baki, Sukoharjo</p>
