@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { HiOutlineCash, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 const IuranDetail = () => {
   const navigate = useNavigate();
   const params = useParams() as { iuran_id: string };
@@ -164,7 +163,7 @@ const IuranDetail = () => {
                 selectedKeys={selectedUnit}
                 onChange={(e) => {
                   setSelectedUnit([e.target.value]);
-                  localStorage.setItem(unitKey, e.target.value);
+                  localStorage.setItem(USER_UNIT, e.target.value);
                 }}
               >
                 {(unitOptions || []).map(option => (

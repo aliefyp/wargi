@@ -47,6 +47,8 @@ const PaymentItem = ({
     { key: '12', label: 'Desember' },
   ];
 
+  console.log(yearOptions, monthOptions)
+
   return (
     <Card shadow="none" fullWidth className="px-2 py-3 border border-zinc-300 text-left space-y-2">
       <div className="flex justify-between items-center gap-4 w-full cursor-pointer" onClick={() => setValue(`iuran.${index}.checked`, !watch(`iuran.${index}.checked`))}>

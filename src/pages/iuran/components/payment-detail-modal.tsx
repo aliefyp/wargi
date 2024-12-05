@@ -60,7 +60,7 @@ const PaymentDetailModal = ({ iuran, isOpen, onChange, onEditClick }: Props) => 
                       fullWidth
                       variant="solid"
                       color="secondary"
-                      onClick={() => { }}
+                      onClick={onClose}
                       className="col-span-2"
                       startContent={<HiOutlineCash size={20} />}
                     >
