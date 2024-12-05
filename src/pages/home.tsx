@@ -3,13 +3,15 @@
 import { title } from "@/components/primitives";
 import { Button, Card, CardBody } from "@nextui-org/react";
 import { HiOutlineArrowRight, HiOutlineLocationMarker } from "react-icons/hi";
-import { PiMoney, PiSpeakerHigh, PiWarning } from "react-icons/pi";
+import { PiClock, PiMoney, PiSpeakerHigh, PiUsers } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
 
 const THUMBNAIL_MENUS = [
-  { id: "iuran", title: "Iuran", icon: PiMoney, color: "bg-content3", href: "/iuran" },
-  { id: "information", title: "Pengumuman", icon: PiSpeakerHigh, color: "bg-content3", href: "/information" },
+  { id: "iuran", title: "Iuran", icon: PiUsers, color: "bg-secondary-500", href: "/iuran" },
+  { id: "pembayaran", title: "Bayar", icon: PiMoney, color: "bg-secondary-500", href: "/pembayaran" },
+  { id: "riwayat", title: "Riwayat", icon: PiClock, color: "bg-secondary-500", href: "/riwayat" },
+  { id: "pengumuman", title: "Pengumuman", icon: PiSpeakerHigh, color: "bg-secondary-500", href: "/pengumuman" },
 ]
 
 export default function HomePage() {
@@ -28,19 +30,19 @@ export default function HomePage() {
       <section>
         <div className="flex justify-between items-center cursor-pointer group" onClick={handleResidenceClick}>
           <div>
-            <h1 className={`${title({ size: 'sm', color: 'violet' })}`}>Santika Land</h1>
+            <h1 className={`${title({ size: 'sm' })}`}>Santika Land</h1>
             <div className="flex items-center gap-1 ">
               <HiOutlineLocationMarker size={16} className="text-gray-600" />
               <p className="text-sm text-zinc-600 font-bold group-hover:underline">Baki, Sukoharjo</p>
             </div>
           </div>
           <Button variant="light" isIconOnly>
-            <HiOutlineArrowRight size={24} className="group-hover:translate-x-1" />
+            <HiOutlineArrowRight size={24} className="group-hover:scale-105" />
           </Button>
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <Card shadow="none" className="bg-warning-100 border-2 border-warning-500">
           <CardBody className=" flex gap-2 flex-row">
             <PiWarning size={24} className="shrink-0 mt-2 text-warning-700" />
@@ -50,7 +52,7 @@ export default function HomePage() {
             </div>
           </CardBody>
         </Card>
-      </section>
+      </section> */}
 
       <section className="grid grid-cols-2 gap-4">
         {THUMBNAIL_MENUS.map(menu => {
@@ -63,8 +65,8 @@ export default function HomePage() {
               onPress={() => handleMenuClick(menu.href)}
             >
               <CardBody className="bg-content2 w-full h-[120px] space-y-4">
-                <div className={`flex items-center justify-center rounded-lg w-[48px] h-[48px] ${menu.color}`}>
-                  <menu.icon size={24} />
+                <div className={`flex items-center justify-center rounded-lg w-[48px] h-[48px] bg-content3`}>
+                  <menu.icon className="text-secondary-500" size={24} />
                 </div>
                 <p className="text-xl font-bold">{menu.title}</p>
               </CardBody>

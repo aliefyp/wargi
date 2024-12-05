@@ -1,17 +1,20 @@
 import { Response } from "@/api/iuran/useGetAllIuran/types"
 import { IURAN_TYPE } from "@/constants/iuran"
-import { Card, Chip } from "@nextui-org/react"
+import { Card, Checkbox, Chip } from "@nextui-org/react"
 
 interface Props {
+  showCheckbox?: boolean
+  checked?: boolean
   iuran: Response['data'][0]
   onClick: () => void
 }
 
-const IuranCard = ({ iuran, onClick }: Props) => {
+const IuranCard = ({ checked = false, showCheckbox = false, iuran, onClick }: Props) => {
   return (
     <Card shadow="none" isPressable fullWidth key={iuran.id} className="px-2 py-3 bg-content2 text-left" onPress={onClick}>
-      <div className="flex justify-between items-center w-full">
-        <div className="space-y-1">
+      <div className="flex justify-between items-center gap-2 w-full">
+        {showCheckbox && <Checkbox isSelected={checked} onValueChange={onClick} />}
+        <div className="space-y-1 grow">
           <p className="text-md font-semibold">
             {iuran.attributes.iuran_name || ''}
           </p>

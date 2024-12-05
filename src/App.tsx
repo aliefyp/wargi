@@ -13,6 +13,7 @@ import Login from "./pages/login";
 
 import 'react-toastify/dist/ReactToastify.css';
 import IuranDetailPage from "./pages/iuran-detail";
+import PembayaranPage from "./pages/pembayaran";
 
 function App() {
   const store = createStore({
@@ -38,6 +39,7 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Route>
           <Route element={<DefaultLayout />}>
+            <Route path="/pembayaran" element={<PembayaranPage />} />
             <Route path="/iuran/new" element={<IuranFormPage />} />
             <Route path="/iuran/edit/:iuran_id" element={<IuranFormPage />} />
             <Route path="/iuran/:iuran_id" element={<IuranDetailPage />} />

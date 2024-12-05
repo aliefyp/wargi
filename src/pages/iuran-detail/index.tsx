@@ -3,6 +3,7 @@ import useGetAllTransaction from "@/api/transaction/useGetAllTransaction";
 import useGetAllUnit from "@/api/unit/useGetAllUnit";
 import { subtitle, title } from "@/components/primitives";
 import { IURAN_TYPE } from "@/constants/iuran";
+import { USER_UNIT } from "@/constants/local-storage-keys";
 import { Button } from "@nextui-org/button";
 import { Card, Chip, Divider, Pagination, Select, SelectItem, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 import dayjs from "dayjs";
@@ -10,13 +11,12 @@ import { useEffect, useState } from "react";
 import { HiOutlineCash, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
 import { useNavigate, useParams } from "react-router-dom";
 
-const unitKey = '_simrt_unit'
 
 const IuranDetail = () => {
   const navigate = useNavigate();
   const params = useParams() as { iuran_id: string };
 
-  const [selectedUnit, setSelectedUnit] = useState([localStorage.getItem(unitKey) || '0']);
+  const [selectedUnit, setSelectedUnit] = useState([localStorage.getItem(USER_UNIT) || '0']);
   const [selectedMonth, setSelectedMonth] = useState([dayjs().format('M')]);
   const [selectedYear, setSelectedYear] = useState([dayjs().format('YYYY')]);
 

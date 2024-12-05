@@ -1,10 +1,10 @@
 import useGetAllIuran from "@/api/iuran/useGetAllIuran";
+import IuranCard from "@/components/iuran-card";
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
 import { Pagination, Skeleton } from "@nextui-org/react";
 import { HiOutlinePlus } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import IuranCard from "./components/iuran-card";
 
 
 export default function PaymentPage() {
