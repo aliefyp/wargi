@@ -6,7 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), VitePWA({
-    registerType: 'prompt',
+    registerType: 'autoUpdate',
     includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'favicon-16x16.png', 'favicon-32x32.png', 'safari-pinned-tab.svg', 'site.webmanifest', 'android-chrome-192x192.png', 'android-chrome-512x512.png', 'maskable_icon.png'],
     manifest: {
       name: 'Wargi',
