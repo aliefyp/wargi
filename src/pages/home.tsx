@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const THUMBNAIL_MENUS = [
-  { id: "iuran", title: "Iuran", icon: PiUsers, color: "bg-secondary-500", href: "/iuran" },
+  { id: "iuran", title: "Iuran Test", icon: PiUsers, color: "bg-secondary-500", href: "/iuran" },
   { id: "pembayaran", title: "Bayar", icon: PiMoney, color: "bg-secondary-500", href: "/pembayaran" },
   { id: "riwayat", title: "Riwayat", icon: PiClock, color: "bg-secondary-500", href: "/riwayat" },
   { id: "pengumuman", title: "Pengumuman", icon: PiSpeakerHigh, color: "bg-secondary-500", href: "/pengumuman" },
