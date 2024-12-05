@@ -7,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), VitePWA({
     registerType: 'prompt',
-    includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'favicon-16x16.png', 'favicon-32x32.png', 'safari-pinned-tab.svg', 'site.webmanifest', 'android-chrome-192x192.png', 'android-chrome-512x512.png'],
+    includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'favicon-16x16.png', 'favicon-32x32.png', 'safari-pinned-tab.svg', 'site.webmanifest', 'android-chrome-192x192.png', 'android-chrome-512x512.png', 'maskable_icon.png'],
     manifest: {
       name: 'Wargi',
       short_name: 'Wargi',
@@ -17,25 +17,25 @@ export default defineConfig({
           src: '/android-chrome-192x192.png',
           sizes: '192x192',
           type: 'image/png',
-          purpose: 'favicon',
+          purpose: 'any',
         },
         {
           src: '/android-chrome-512x512.png',
           sizes: '512x512',
           type: 'image/png',
-          purpose: 'favicon',
+          purpose: 'any',
         },
         {
           src: '/apple-touch-icon.png',
           sizes:'180x180',
           type:'image/png',
-          purpose:'apple touch icon',
+          purpose:'any',
         },
         {
           src: '/maskable_icon.png',
           sizes:'512x512',
           type:'image/png',
-          purpose:'any maskable',
+          purpose:'maskable',
         }
       ],
       theme_color: '#8c52ff',
